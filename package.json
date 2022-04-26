@@ -1,6 +1,6 @@
 {
   "name": "@mguidetti/stimulus-components",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "source": "src/index.js",
   "main": "./dist/stimulus-components.umd.js",
   "module": "./dist/stimulus-components.module.js",
