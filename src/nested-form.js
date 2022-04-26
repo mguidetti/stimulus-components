@@ -5,7 +5,8 @@ export default class extends Controller {
   static values = {
     replaceKey: String,
     max: Number,
-    min: Number
+    min: Number,
+    confirmRemove: Boolean
   }
 
   initialize () {
@@ -57,6 +58,12 @@ export default class extends Controller {
   }
 
   removeAssociation (event) {
+    if (this.confirmRemoveValue) {
+      if (confirm('Are you sure?') === false) {
+        return false
+      }
+    }
+
     const wrapper = event.target.closest("[data-nested-form-target='item']")
 
     // New records are simply removed from the page
