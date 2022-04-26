@@ -3,7 +3,7 @@ import { Controller } from '@hotwired/stimulus'
 export default class extends Controller {
   static targets = ['list', 'item', 'template', 'message']
   static values = {
-    replaceKey: String,
+    replaceKey: { type: String, default: 'NEW_RECORD' },
     max: Number,
     min: Number,
     confirmRemove: Boolean
@@ -11,10 +11,6 @@ export default class extends Controller {
 
   initialize () {
     this.element.nestedForm = this
-  }
-
-  connect () {
-    this.replaceKey = this.replaceKeyValue || 'NEW_RECORD'
   }
 
   get activeItems () {
@@ -42,7 +38,7 @@ export default class extends Controller {
 
     const tempId = Date.now() * Math.floor(Math.random() * 100)
     const content = template.innerHTML.replace(
-      new RegExp(this.replaceKey, 'g'),
+      new RegExp(this.replaceKeyValue, 'g'),
       tempId
     )
     this.listTarget.insertAdjacentHTML('beforeend', content)
