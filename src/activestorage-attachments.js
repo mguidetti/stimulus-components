@@ -20,7 +20,7 @@ export default class extends Controller {
       this.hasMaxFilesValue &&
       this.activeFiles.length >= this.maxFilesValue
     ) {
-      setMessage('alert', `Maximum files allowed: ${this.maxValue}`)
+      this.setMessage('alert', `Maximum files allowed: ${this.maxValue}`)
       return false
     }
 
@@ -34,7 +34,7 @@ export default class extends Controller {
       this.hasMaxFilesValue &&
       files.length + this.activeFiles.length > this.maxFilesValue
     ) {
-      setMessage('alert', `Maximum files allowed: ${this.maxValue}`)
+      this.setMessage('alert', `Maximum files allowed: ${this.maxValue}`)
       return false
     }
 
@@ -49,12 +49,12 @@ export default class extends Controller {
 
   async approveFile (file) {
     if (this.hasWhitelistValue && !this.whitelistValue.includes(file.type)) {
-      setMessage('alert', `Invalid file type: ${file.name}`)
+      this.setMessage('alert', `Invalid file type: ${file.name}`)
       return false
     }
 
     if (this.hasmaxMbValue && file.size > this.maxMb) {
-      setMessage('alert', `File size too large: ${file.name}`)
+      this.setMessage('alert', `File size too large: ${file.name}`)
       return false
     }
 
@@ -62,7 +62,7 @@ export default class extends Controller {
       const largestDimension = await this.getLargestDimension(file)
 
       if (largestDimension > this.MaxDimensionValue) {
-        setMessage('alert', `Dimensions are too lage: ${file.name}`)
+        this.setMessage('alert', `Dimensions are too lage: ${file.name}`)
         return false
       }
     }
@@ -128,7 +128,7 @@ export default class extends Controller {
         break
       case 'error':
         attachment.remove()
-        setMessage('alert', `Error uploading ${event.file.name}.`)
+        this.setMessage('alert', `Error uploading ${event.file.name}.`)
         break
       case 'finished': {
         attachment.querySelector('.upload-progress').remove()
