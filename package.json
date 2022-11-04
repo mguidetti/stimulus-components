@@ -20,10 +20,10 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "microbundle": "^0.14.2",
     "mutationobserver-shim": "^0.3.7",
-    "np": "^7.6.1"
+    "np": "^7.6.2"
   },
   "dependencies": {
-    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/stimulus": ">=3.0.0",
     "@rails/activestorage": "^6.1.5",
     "sortablejs": "^1.15.0",
     "uuid": "^8.3.2"
