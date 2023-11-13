@@ -18,17 +18,17 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.17.0",
-    "microbundle": "^0.14.2",
+    "microbundle": "^0.15.1",
     "mutationobserver-shim": "^0.3.7",
-    "np": "^7.6.2"
+    "np": "^8.0.4"
   },
   "dependencies": {
-    "@hotwired/stimulus": ">=3.0.0",
-    "@rails/activestorage": "^6.1.5",
+    "@hotwired/stimulus": ">=3.2.2",
+    "@rails/activestorage": "^7.1.1",
     "sortablejs": "^1.15.0",
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
-    "@hotwired/stimulus": ">=3.0.0"
+    "@hotwired/stimulus": ">=3.2.2"
   }
 }
