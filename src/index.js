@@ -1,3 +1,6 @@
-export { default as ActivestorageAttachments } from './activestorage-attachments'
-export { default as NestedForm } from './nested-form'
+export { default as ActivestorageAttachments } from './activestorage_attachments'
+export { default as AutoForm } from './auto_form'
+export { default as NestedForm } from './nested_form'
+export { default as ScrollLock } from './scroll_lock'
 export { default as Sortable } from './sortable'
+export { default as TextareaAutosize } from './textarea_autosize'

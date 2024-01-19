@@ -17,18 +17,21 @@
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.17.0",
     "microbundle": "^0.15.1",
-    "mutationobserver-shim": "^0.3.7",
-    "np": "^8.0.4"
+    "standard": "^17.1.0"
   },
   "dependencies": {
     "@hotwired/stimulus": ">=3.2.2",
     "@rails/activestorage": "^7.1.3",
+    "autosize": "^6.0.1",
     "sortablejs": "^1.15.2",
+    "stimulus-use": "^0.52.2",
     "uuid": "^9.0.1"
   },
   "peerDependencies": {
     "@hotwired/stimulus": ">=3.2.2"
+  },
+  "engines" : { 
+    "node" : ">=16.0.0"
   }
 }
