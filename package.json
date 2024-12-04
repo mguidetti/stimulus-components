@@ -10,7 +10,8 @@
   "license": "MIT",
   "private": false,
   "np": {
-    "tests": false
+    "tests": false,
+    "contents": "dist"
   },
   "scripts": {
     "build": "microbundle --globals @hotwired/stimulus=Stimulus",
