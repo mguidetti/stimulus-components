@@ -8,11 +8,10 @@ export default class extends Controller {
     options: Object
   }
 
-  initialize () {
+  initialize() {
     const defaultOptions = {
       group: uuidv4(),
       animation: 150,
-      onEnd: this.end.bind(this),
       filter: 'input, button, select, textarea',
       ghostClass: 'opacity-25',
       preventOnFilter: false,
@@ -21,15 +20,19 @@ export default class extends Controller {
 
     this.sortable = Sortable.create(this.element, {
       ...{ ...defaultOptions, ...this.optionsValue },
-      onEnd: this.end.bind(this)
+      onSort: this.onSort.bind(this),
     })
   }
 
-  update () {
+  update() {
+    this.dispatch("update")
     this.positionTargets.forEach((position, index) => (position.value = index))
   }
 
-  end () {
+  onSort(e) {
+    const event = this.dispatch("sort", { detail: { event: e }, cancelable: true })
+    if (event.defaultPrevented) return
+
     this.update()
   }
 }
